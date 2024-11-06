@@ -36,6 +36,38 @@
             .close-menu {
                 margin-top: 0 !important;
             }
+
+            .carousel-container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .carousel-wrapper {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                transition: transform 0.5s ease;
+            }
+
+            .carousel-item {
+                min-width: 100%;
+                object-fit: cover;
+                transition: opacity 0.5s ease;
+                z-index: -200;
+            }
+            
+            .carousel-container button {
+                height: 100%;
+                width: 60px;
+                transition: opacity 0.5s ease-in-out;
+                opacity: 0;
+            }
+
+            .carousel-container button:hover {
+                opacity: 1;
+            }
+
         </style>
     </head>
     <body class="bg-cover bg-fixed bg-center" style="background-image: url('./../assets/images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg'); font-family: 'Montserrat', sans-serif;">
@@ -63,6 +95,27 @@
                 </ul>
             </nav>
         </header>
+        <div class="carousel-container">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <div class="carousel-item">
+                    <img src="./assets/images/lobby.jpg" alt="Slide 1" class="w-full">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/bed1.jpg" alt="Slide 2" class="w-full">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/bed2.jpg" alt="Slide 3" class="w-full">
+                </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button onclick="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-3 rounded-full text-4xl">
+                &#8249;
+            </button>
+            <button onclick="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 text-white p-3 rounded-full text-4xl">
+                &#8250;
+            </button>
+        </div>
         <script>
             const hamburgerMenu = document.getElementById("menu");
             const hamburgerMenuCheckbox = document.getElementById("check");
@@ -76,6 +129,27 @@
                     console.log("Un-checked");
                 }
             }
+
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const carouselWrapper = document.getElementById('carouselWrapper');
+                const totalItems = document.querySelectorAll('.carousel-item').length;
+                carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % document.querySelectorAll('.carousel-item').length;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                const totalItems = document.querySelectorAll('.carousel-item').length;
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                updateCarousel()
+            }
+
+            let autoScrollInterval = setInterval(nextSlide, 3000);
         </script>
     </body>
 </html>
