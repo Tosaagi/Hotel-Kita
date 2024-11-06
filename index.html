@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TravelAja - Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            :root {
+                --color1: #4b92a7;
+            }
+
+            .menu {
+                transition: all 0.2s ease-in-out;
+            }
+
+            .hover-underline::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: var(--color1);
+                transition: width 0.15s ease-in-out;
+            }
+
+            .hover-underline:hover::after {
+                width: 100%;
+            }
+
+            .close-menu {
+                margin-top: 0 !important;
+            }
+        </style>
+    </head>
+    <body class="bg-cover bg-fixed bg-center" style="background-image: url('./../assets/images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg'); font-family: 'Montserrat', sans-serif;">
+        <header class="flex justify-between bg-white px-10 md:px-20">
+            <img class="max-h-16 min-h-16 my-2" src="assets/images/echo-garden.png" alt="echo garden logo">
+            <nav class="flex items-center">
+                <ul class="flex items-center space-x-8 md:space-x-12 relative list-none w-full">
+                    <li class="logo">
+                        <a href="#"><img src='./assets/images/logo.png' class="w-10" /></a>
+                    </li>
+                    <input type="checkbox" id="check" class="hidden" />
+                    <span id="menu" class="menu flex flex-col items-center md:flex-row md:space-x-8 space-y-8 md:space-y-0 md:static fixed top-0 right-0 w-4/5 h-full bg-white transform translate-x-full transition-transform duration-200 md:flex-row md:translate-x-0 md:h-auto md:w-auto">
+                        <li class="mt-12 md:mt-0"><a href="#" class="hover-underline relative text-gray-800 uppercase">Home</a></li>
+                        <li><a href="#" class="hover-underline relative text-gray-800 uppercase">Products</a></li>
+                        <li><a href="#" class="hover-underline relative text-gray-800 uppercase">Services</a></li>
+                        <li><a href="#" class="hover-underline relative text-gray-800 uppercase">About</a></li>
+                        <li><a href="#" class="hover-underline relative text-gray-800 uppercase">Contact</a></li>
+                        <label for="check" class="mt-0 close-menu absolute top-5 right-5 text-gray-800 text-2xl cursor-pointer md:hidden">
+                            <i class="fas fa-times"></i>
+                        </label>
+                    </span>
+                    <label for="check" class="open-menu text-gray-800 text-2xl cursor-pointer md:hidden">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const hamburgerMenu = document.getElementById("menu");
+            const hamburgerMenuCheckbox = document.getElementById("check");
+
+            hamburgerMenuCheckbox.onchange = () => {
+                if (hamburgerMenuCheckbox.checked) {
+                    hamburgerMenu.style.right = "80%";
+                    console.log("Checked");
+                } else {
+                    hamburgerMenu.style.right = "0";
+                    console.log("Un-checked");
+                }
+            }
+        </script>
+    </body>
+</html>
