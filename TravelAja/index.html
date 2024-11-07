@@ -14,6 +14,11 @@
                 --color1: #4b92a7;
             }
 
+            header {
+                position: relative;
+                z-index: 10; /* Make sure header is above carousel */
+            }
+
             .menu {
                 transition: all 0.2s ease-in-out;
             }
@@ -40,7 +45,9 @@
             .carousel-container {
                 position: relative;
                 width: 100%;
+                height: 80vh;
                 overflow: hidden;
+                z-index: 1;
             }
 
             .carousel-wrapper {
@@ -52,25 +59,49 @@
 
             .carousel-item {
                 min-width: 100%;
+                height: 100%;
                 object-fit: cover;
                 transition: opacity 0.5s ease;
-                z-index: -200;
             }
-            
+
+            .carousel-item img {
+                object-fit: cover;
+                height: 100%;
+            }
+
             .carousel-container button {
                 height: 100%;
                 width: 60px;
                 transition: opacity 0.5s ease-in-out;
                 opacity: 0;
+                position: absolute;
+                z-index: 999;
             }
 
             .carousel-container button:hover {
                 opacity: 1;
             }
 
+            .booking button {
+                z-index: 999;
+            }
+
+            @media (max-width: 640px) {
+                .carousel-container {
+                    height: 60vh;
+                }
+
+                .booking {
+                    flex-direction: column;
+                }
+
+                .booking button {
+                    margin-bottom: 3px;
+                }
+            }
         </style>
     </head>
-    <body class="bg-cover bg-fixed bg-center" style="background-image: url('./../assets/images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg'); font-family: 'Montserrat', sans-serif;">
+    <body class="bg-cover bg-fixed bg-center" style="font-family: 'Montserrat', sans-serif;">
         <header class="flex justify-between bg-white px-10 md:px-20">
             <img class="max-h-16 min-h-16 my-2" src="assets/images/echo-garden.png" alt="echo garden logo">
             <nav class="flex items-center">
@@ -104,16 +135,30 @@
                     <img src="./assets/images/bed1.jpg" alt="Slide 2" class="w-full">
                 </div>
                 <div class="carousel-item">
-                    <img src="./assets/images/bed2.jpg" alt="Slide 3" class="w-full">
+                    <img src="./assets/images/bed3.jpg" alt="Slide 3" class="object-cover w-full h-full">
                 </div>
             </div>
             
             <!-- Navigation Buttons -->
-            <button onclick="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-3 rounded-full text-4xl">
+            <button id="btn-prev-slide" onclick="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-3 rounded-full text-4xl">
                 &#8249;
             </button>
-            <button onclick="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 text-white p-3 rounded-full text-4xl">
+            <button id="btn-next-slide" onclick="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 text-white p-3 rounded-full text-4xl">
                 &#8250;
+            </button>
+        </div>
+        <div class="booking flex flex-row justify-center w-4/5 rounded-md shadow-sm mx-auto -mt-4 z-50" role="group">
+            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+                Guests
+            </button>
+            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+                Check In
+            </button>
+            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+                Check Out
+            </button>
+            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+                Rooms
             </button>
         </div>
         <script>
@@ -131,10 +176,13 @@
             }
 
             let currentIndex = 0;
+            const carouselWrapper = document.getElementById('carouselWrapper');
+            const totalItems = document.querySelectorAll('.carousel-item').length;
+
+            const btnPrevSlide = document.getElementById('btn-prev-slide');
+            const btnNextSlide = document.getElementById('btn-next-slide');
 
             function updateCarousel() {
-                const carouselWrapper = document.getElementById('carouselWrapper');
-                const totalItems = document.querySelectorAll('.carousel-item').length;
                 carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
             }
 
@@ -149,7 +197,29 @@
                 updateCarousel()
             }
 
+            function resetAutoScroll() {
+                clearInterval(autoScrollInterval); 
+                autoScrollInterval = setInterval(nextSlide, 3000); 
+            }
+
             let autoScrollInterval = setInterval(nextSlide, 3000);
+
+            btnPrevSlide.addEventListener('mousedown', () => {
+                resetAutoScroll();
+            });
+
+            btnNextSlide.addEventListener('mousedown', () => {
+                resetAutoScroll();
+            });
+
+            btnPrevSlide.addEventListener('touchstart', () => {
+                resetAutoScroll();
+            });
+
+            btnNextSlide.addEventListener('touchstart', () => {
+                resetAutoScroll();
+            });
+            
         </script>
     </body>
 </html>
