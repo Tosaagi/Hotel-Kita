@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TravelAja - Home</title>
+        <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+        <script src="https://unpkg.com/flowbite@1.4.0/dist/datepicker.js"></script>
+    
         <style>
             :root {
                 --color1: #4b92a7;
@@ -102,17 +106,21 @@
         </style>
     </head>
     <body class="bg-cover bg-fixed bg-center" style="font-family: 'Montserrat', sans-serif;">
-        <header class="flex justify-between bg-white px-10 md:px-20">
-            <img class="max-h-16 min-h-16 my-2" src="assets/images/echo-garden.png" alt="echo garden logo">
-            <nav class="flex items-center">
-                <ul class="flex items-center space-x-8 md:space-x-12 relative list-none w-full">
+        <header class="flex justify-between">
+            <nav class="bg-white fixed w-full px-12 flex items-center shadow-lg">
+                <div class="w-full flex flex-wrap items-center justify-between mx-auto">
+                    <a href="#" class="flex items-center space-x-3">
+                        <img class="max-h-16 min-h-16 my-2" src="assets/images/echo-garden.png" alt="echo garden logo">
+                    </a>
+                </div>
+                <ul class="flex items-center space-x-8 md:space-x-12 relative list-none w-auto">
                     <li class="logo">
                         <a href="#"><img src='./assets/images/logo.png' class="w-10" /></a>
                     </li>
                     <input type="checkbox" id="check" class="hidden" />
                     <span id="menu" class="menu flex flex-col items-center md:flex-row md:space-x-8 space-y-8 md:space-y-0 md:static fixed top-0 right-0 w-4/5 h-full bg-white transform translate-x-full transition-transform duration-200 md:flex-row md:translate-x-0 md:h-auto md:w-auto">
                         <li class="mt-12 md:mt-0"><a href="#" class="hover-underline relative text-gray-800 uppercase">Home</a></li>
-                        <li><a href="#" class="hover-underline relative text-gray-800 uppercase">Products</a></li>
+                        <li><a href="#product-htl" class="hover-underline relative text-gray-800 uppercase">Products</a></li>
                         <li><a href="#" class="hover-underline relative text-gray-800 uppercase">Services</a></li>
                         <li><a href="#" class="hover-underline relative text-gray-800 uppercase">About</a></li>
                         <li><a href="#" class="hover-underline relative text-gray-800 uppercase">Contact</a></li>
@@ -147,20 +155,306 @@
                 &#8250;
             </button>
         </div>
-        <div class="booking flex flex-row justify-center w-4/5 rounded-md shadow-sm mx-auto -mt-4 z-50" role="group">
-            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
-                Guests
-            </button>
-            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
-                Check In
-            </button>
-            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
-                Check Out
-            </button>
-            <button type="button" class="flex-grow px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
-                Rooms
-            </button>
+        <section class="py-12">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-semibold mb-6">About Us</h2>
+                <p class="text-gray-700 leading-relaxed">MyHotel offers a luxurious experience with world-class amenities, comfortable rooms, and top-notch service. Perfect for your holiday or business trip, we make sure every stay is memorable and comfortable.</p>
+              </div>
+        </section>
+        <!-- Product -->
+        <section id="product-htl" class="mb-16" >
+            <h2 class="text-center text-3xl font-semibold mb-6">Our Rooms</h2>
+            <div class="grid md:grid-cols-3 text-base px-12 md:px-14 md:text-sm xl:px-52 xl:text-lg gap-6">
+                <div class="container pb-7 rounded-lg shadow bg-gray-800 border-gray-700 hover:bg-yellow-600 hover:border-yellow-600 transition duration-300 ease-in">
+                    <img class="w-full h-64 object-cover rounded-t-lg" src="https://o-cdn-cas.oramiland.com/parenting/images/kamarhotel1.width-800.format-webp.webp" alt="product image" />            
+                    <div class="text-center m-4 text-gray-100">
+                        <h5 class="text-xl font-medium text-gray-100 dark:text-gray-100">Standard Room</h5>
+                    </div>
+                    <div class="flex justify-center justify">
+                        <div role="list" class="grid grid-cols-2 md:max-w-sm gap-x-4 gap-y-4 p-10 md:p-4 items-center">
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">1 Bed</span>
+                            </div><div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">AC</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">Wi-Fi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">Parking</span>
+                            </div>
+                            <div class="flex items-center line-through decoration-gray-500  text-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight ms-3">Kulkas Mini</span>
+                            </div>
+                            <div class="flex items-center line-through decoration-gray-500  text-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight ms-3">Microwife</span>
+                            </div>
+                            <div class="flex items-center line-through decoration-gray-500  text-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight ms-3">Complete documentation</span>
+                            </div>
+                            <div class="flex items-center line-through decoration-gray-500  text-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight ms-3">24×7 phone & email support</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="container pb-7 rounded-lg shadow bg-gray-800 border-gray-700 hover:bg-yellow-600 hover:border-yellow-600 transition duration-300 ease-in">
+                    <img class="w-full h-64 object-cover rounded-t-lg" src="https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/210/2017/11/27021004/tentrem-hotel-yogyakarta-gallery-Room-Deluxe-image01.jpg" alt="product image" />
+                    <div class="text-center m-4 text-gray-100">
+                        <h5 class="mb-4 text-xl font-medium text-white">Deluxe Room</h5>
+                    </div>
+                    <div class="flex justify-center justify">
+                        <div role="list" class="grid grid-cols-2 md:max-w-sm gap-x-4 gap-y-4 p-10 md:p-4 items-center">
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">2 Beds</span>
+                            </div><div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">AC</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">Wi-Fi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">Parking</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">Kulkas Mini</span>
+                            </div>
+                            <div class="flex items-center line-through decoration-gray-500  text-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight ms-3">Microwife</span>
+                            </div>
+                            <div class="flex items-center line-through decoration-gray-500  text-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight ms-3 ms-3">Complete documentation</span>
+                            </div>
+                            <div class="flex items-center line-through decoration-gray-500  text-gray-500">
+                                <svg class="flex-shrink-0 w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight ms-3 ms-3">24×7 phone & email support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pb-7 rounded-lg shadow bg-gray-800 border-gray-700 hover:bg-yellow-600 hover:border-yellow-600 transition duration-300 ease-in">
+                    <img class="w-full h-64 object-cover rounded-t-lg" src="https://hotelnikkobali-benoabeach.com/wp-content/uploads/2020/08/heroOVS-Premier-Family_Hotel-Nikko-Bali-2.jpg" alt="product image" />
+                    <div class="text-center m-4 text-gray-100">
+                        <h5 class="mb-4 text-xl font-medium text-white">Family Room</h5>
+                    </div>
+                    <div class="flex justify-center justify">
+                        <div role="list" class="grid grid-cols-2 md:max-w-sm gap-x-4 gap-y-4 p-10 md:p-4 items-center">
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">4 Beds</span>
+                            </div><div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">AC</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">Wi-Fi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3">Parking</span>
+                            </div>
+                            <div class="flex items-center decoration-white">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3 ms-3">Kulkas Besar</span>
+                            </div>
+                            <div class="flex items-center decoration-white">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3 ms-3">Microwife</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3 ms-3">Complete documentation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="flex-shrink-0 w-4 h-4 text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                </svg>
+                                <span class=" font-normal leading-tight text-white ms-3 ms-3">24×7 phone & email support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--checkout-bar-->
+        <section class="xl:p-20 md:p-12 sm:p-8 justify-center bg-yellow-600">
+            <h2 class="text-3xl text-white font-semibold text-center mb-6">Book Your Stay</h2>
+            <div class="flex justify-center">
+                <div class="bg-white p-12 rounded-lg shadow-md flex space-x-4">
+                    <form id="bookingForm" action="/order" method="POST" class="xl:flex xl:space-x-4 items-center xl:space-y-0 space-y-4" onsubmit="handleSubmit(event)">
+                        <div class="flex space-x-4">
+                            <div class="w-1/2">
+                                <label for="checkin" class="block text-sm font-medium text-gray-700">Check-In</label>
+                                <input 
+                                    type="text" 
+                                    id="checkin" 
+                                    class="datepicker block w-full mt-1 p-2 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500" 
+                                    placeholder="Select date start"
+                                    autocomplete="off" name="check_in" required
+                                >
+                            </div>
+            
+                            <div class="mt-4 flex items-center justify-center">
+                                <span class="text-lg font-semibold text-gray-700">to</span>
+                            </div>
+            
+                            <div class="w-1/2">
+                                <label for="checkout" class="block text-sm font-medium text-gray-700">Check-Out</label>
+                                <input 
+                                    type="text" 
+                                    id="checkout" 
+                                    class="datepicker block w-full mt-1 p-2 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500" 
+                                    placeholder="Select date end"
+                                    autocomplete="off" name="check_out" required
+                                >
+                            </div>
+                        </div>        
+                        <div>
+                            <label for="guests" class="block text-sm font-medium text-gray-700">Guests</label>
+                            <select 
+                            id="guests" 
+                            class="block w-full mt-1 p-2 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500" name="guests" required
+                            >
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                        </select>
+                        </div>
+                    
+                        <!-- Room Type -->
+                        <div>
+                            <label for="room" class="block text-sm font-medium text-gray-700">Room Type</label>
+                            <select 
+                            id="room" 
+                            class="block w-full mt-1 p-2 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500" name="type_r" required
+                            >
+                            <option value="standard">Standard Room</option>
+                            <option value="deluxe">Deluxe Room</option>
+                            <option value="suite">Suite</option>
+                            <option value="family">Family Room</option>
+                            </select>
+                        </div>
+                        <div>
+                            
+                            <button 
+                            type="submit" 
+                            class="block w-full mt-6 px-8 bg-blue-500 hover:bg-yellow-600 text-white py-2 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-500 ease-in"
+                            >
+                            Book
+                            </button>
+                        </div>
+                    </form><!-- Check-In Date -->
+                </div>
+            </div>
+        </section>
+        <!-- Confirmation Overlay -->
+        <div id="confirmationOverlay" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center hidden">
+            <div class="bg-white p-8 rounded-lg shadow-md w-96">
+                <h2 class="text-2xl font-semibold mb-4">Confirm Your Booking</h2>
+                <form id="confirmationForm" action="/order" method="post" onsubmit="confirmBooking(event)">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                        <input type="text" id="name" class="block w-full p-2 border border-gray-300 rounded-md" name="nama" required>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-md">Confirm Booking</button>
+                    </div>
+                </form>
+                <button onclick="closeOverlay()" class="mt-4 w-full bg-red-500 text-white py-2 rounded-md">Cancel</button>
+            </div>
         </div>
+        
+
+        <!-- Success Overlay -->
+        <div id="successOverlay" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center hidden">
+            <div class="bg-white p-8 rounded-lg shadow-md w-96">
+                <h2 class="text-2xl font-semibold mb-4">Booking Successful!</h2>
+                <p>Your booking has been confirmed. Thank you!</p>
+                <button onclick="closeOverlay()" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md">Close</button>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 bg-gray-100">
+            <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
+            <p class="text-gray-700">For inquiries or reservations, reach us at:</p>
+            <p class="text-gray-900 font-bold mt-2">Phone: +123-456-7890</p>
+            <p class="text-gray-900 font-bold">Email: info@myhotel.com</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-4">
+            <div class="container mx-auto text-center">
+            <p>&copy; 2024 MyHotel. All rights reserved.</p>
+            </div>
+        </footer>
         <script>
             const hamburgerMenu = document.getElementById("menu");
             const hamburgerMenuCheckbox = document.getElementById("check");
@@ -219,7 +513,66 @@
             btnNextSlide.addEventListener('touchstart', () => {
                 resetAutoScroll();
             });
-            
+
+            document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date(); // Set the current date as minimum date
+
+            // Initialize the Check-In datepicker
+            const checkinDatepicker = new Datepicker(document.getElementById('checkin'), {
+            minDate: today,
+            autoClose: true,
+            format: 'dd/mm/yyyy',
+            onSelect: function(selectedDate) {
+                // Update the minimum date for Check-Out datepicker based on Check-In date
+                checkoutDatepicker.setOptions({
+                minDate: selectedDate
+                });
+            }
+            });
+
+            // Initialize the Check-Out datepicker
+            const checkoutDatepicker = new Datepicker(document.getElementById('checkout'), {
+            minDate: today,
+            autoClose: true,
+            format: 'dd/mm/yyyy'
+            });
+        });
+        
+        
+    
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            console.log("Form submitted"); // Tambahkan ini untuk debugging
+
+            // Show the confirmation overlay
+            document.getElementById("confirmationOverlay").classList.remove("hidden");
+        }
+
+        // Function to handle confirmation
+        function confirmBooking(event) {
+            event.preventDefault();
+            console.log("Book confirmed"); // Tambahkan ini untuk debugging
+
+            // Close the confirmation overlay
+            document.getElementById("confirmationOverlay").classList.add("hidden");
+
+            // Show the success overlay
+            document.getElementById("successOverlay").classList.remove("hidden");
+
+            // Optional: You can submit the form data to the server here (via Fetch API)
+            // For example:
+            //fetch('/order', { method: 'POST', body: new FormData(event.target) });
+        }
+
+        // Function to close the overlay
+        function closeOverlay() {
+            document.getElementById("confirmationOverlay").classList.add("hidden");
+            document.getElementById("successOverlay").classList.add("hidden");
+        }
+
+
         </script>
     </body>
 </html>
